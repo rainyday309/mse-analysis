@@ -9,7 +9,12 @@
 % source_sampr: sampling rate of sourcefile
 
 
-function filtered_signal = myFilter(original_signal, range, source_sampr)
+function final_signal = myFilter(original_signal, range, source_sampr)
+% notch filter for 60Hz
+notch = designfilt('bandstopiir', 'FilterOrder', 2, 'HalfPowerFrequency1', 59, 'HalfPowerFrequency2', 61, 'SampleRate', 128, 'DesignMethod', 'butter');
+filtered_signal = filtfilt(notch, original_signal);
+
+% bandpass filter for designated frequency range
 [u,v] = butter(2,range/(source_sampr/2),'bandpass');
-filtered_signal = filter(u,v,original_signal);
+final_signal = filter(u,v,filtered_signal);
 end

@@ -6,12 +6,15 @@ function output = mseProcess(filename)
 % read data by filename
 [v,~,~,~] = loaddat(filename,21);
 
-vtrim = trimArray(v,1280);
+% filter the signal before truncating data
+v_filtered = myFilter(v,[1,63],128);
+
+% truncate data
+vtrim = trimArray(v_filtered,1280);
 vcell = splitArray(vtrim,1280);
 
-% question: we will cut the matrix into chunks.
-% should I apply filter before or after splitting the array?
-filter = myFilterHandler([1,32],128);
-output = cellfun(filter, vcell, 'UniformOutput',false);
+% fft each cell
+% output = cellfun(filter, vcell, 'UniformOutput',false);
+output = vcell;
 
 end
