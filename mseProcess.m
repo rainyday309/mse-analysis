@@ -7,14 +7,24 @@ function output = mseProcess(filename)
 [v,~,~,~] = loaddat(filename,21);
 
 % filter the signal before truncating data
-v_filtered = myFilter(v,[1,63],128);
+% data could not provide high gamma frequency
+v_filtered = myFilter(v,[1,45],128);
 
 % truncate data
 vtrim = trimArray(v_filtered,1280);
 vcell = splitArray(vtrim,1280);
 
-% fft each cell
+% fft each cell, sampling frequency set to 128Hz
+vcellfft = cellfun(@(x) fft(x,128), vcell, 'UniformOutput', false);
+
+% calculate signal-noise ratio at every channel of each epoch
+snrcell = cellfun(@mysnr,vcellfft,'UniformOutput',false);
+snrarray = cell2mat(snrcell)';
+
 % output = cellfun(filter, vcell, 'UniformOutput',false);
-output = vcell;
+output = snrarray;
+
+% current problem: signal-noise ratio ranking is different at each channel
+% we should pick the three with most channel in top 3
 
 end
