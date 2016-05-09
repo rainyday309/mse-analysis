@@ -15,13 +15,13 @@ format of data output:
 
 ### data handling for each patient
 - trimArray.m : trim matrix to 20x1280n, for splitting array into 10sec epoch
-- notch filter: filter out 60Hz noise from power supply
-- butterworth band filter, filter out frequency < 1Hz and > 80 (60?) Hz
+- myFilter.m : notch filter: filter out 60Hz noise from power supply
+- myFilter.m :butterworth band filter, filter out frequency < 1Hz and > 80 (60?) Hz
 - splitArray.m : cut matrix into n submatrix with size of 20x1280, returned in cell array
 - fft each epoch and return power spectrum of each epoch
-- calculate signal-noise ratio (percentage of power at alpha and beta range) of each epoch
-- select 3 epoch with best signal-noise ratio
-- calculate multi-scale entropy of each of these 3 epoch
+- mysnr.m : calculate signal-noise ratio (percentage of power at alpha and beta range) of each epoch
+- snrRanking.m : select 3 epoch with best signal-noise ratio
+- mseCalc.m : calculate multi-scale entropy of epoch, rows: scaling factor, column: channel
 
 ### overall data handling
 - return multi-scale entropy of selected epoch for all these patients
