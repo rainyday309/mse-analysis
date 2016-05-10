@@ -1,0 +1,7 @@
+Epre_EEGA.DAT is not openable.
+Epost_EEGA.DAT is not openable.
+EFY020A.DAT is not openable.
+EFY041A.DAT is not openable.
+EFX116A.DAT is not openable.
+EFX159A.DAT is not openable.
+EPPPPPPPPA.DAT is not openable.
