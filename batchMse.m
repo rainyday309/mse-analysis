@@ -25,20 +25,41 @@ for i=1:cells
         end
     end
 end
+
+% read data filename from filelist
 tline = fgetl(fid);
+current_row = 2;
+
 
 while (ischar(tline))
+    % display process
     process = strcat('processing: ',tline);
     disp(process);
     
-    % [~,data] = mseProcess(tline);
-    % msedata = cellfun(@mseCalc, data, 'UniformOutput',false);
+    % read data
+    [~,data] = mseProcess(tline);
     
-    % name = regexp(tline, 'F[XY]\d{3}','match');
+    % calculate mse, return 3x1 cell array of mse arrays
+    msedata = cellfun(@mseCalc, data, 'UniformOutput',false);
     
+    name = regexp(tline, 'F[XY]\d{3}','match');
+    results{current_row,1} = name;
+    
+    % hard coded size of cell array and column/row number
+    current_col = 2;
+    
+    for a=1:3
+        for b=1:20
+            for c=1:20
+                results{current_row,current_col} = msedata{a}(c,b);
+                current_col = current_col + 1;
+            end
+        end
+    end
     
     
     tline = fgetl(fid);
+    current_row = current_row + 1;
 end
 
 % write cell array into csv
