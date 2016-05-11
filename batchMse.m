@@ -19,7 +19,7 @@ current_col = 2;
 for i=1:cells
     for j=1:channels
         for k=1:rows
-            title = strcat(num2str(i),'_ch',num2str(j),'_scale',num2str(k));
+            title = strcat('epoch',num2str(i),'_ch',num2str(j),'_scale',num2str(k));
             results{1,current_col} = title;
             current_col = current_col + 1;
         end
@@ -43,6 +43,7 @@ while (ischar(tline))
     msedata = cellfun(@mseCalc, data, 'UniformOutput',false);
     
     name = regexp(tline, 'F[XY]\d{3}','match');
+    name = name{1};
     results{current_row,1} = name;
     
     % hard coded size of cell array and column/row number
