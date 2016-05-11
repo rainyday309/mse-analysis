@@ -1,10 +1,10 @@
 % batchMse.m
-% usage: batchMse('name of filelist')
+% usage: batchMse('name of filelist','output filename')
 % read file name from filelist.txt
 % calculate mse of each file. get cell arrays of mse
 % write mse of each file into .csv file
 
-function results = batchMse(input)
+function results = batchMse(input,filename)
 
 fid = fopen(input);
 cells = 3;
@@ -64,6 +64,8 @@ while (ischar(tline))
 end
 
 % write cell array into csv
-
+if exist(filename)
+    cell2csv(filename,results);
+end
 
 end
