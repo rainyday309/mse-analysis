@@ -64,7 +64,7 @@ while (ischar(tline))
 end
 
 % write cell array into csv
-if exist(filename)
+if exist('filename','var')
     cell2csv(filename,results);
 end
 
