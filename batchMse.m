@@ -9,7 +9,7 @@ function results = batchMse(input,filename)
 fid = fopen(input);
 cells = 3;
 channels = 20;
-rows = 20;
+rows = 10;
 results = {};
 
 % write header

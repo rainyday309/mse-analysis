@@ -10,7 +10,9 @@ function [vcell,output] = mseProcess(filename)
 
 % filter the signal before truncating data
 % data could not provide high gamma frequency
-v_filtered = myFilter(v,[1,45],128);
+% 20160519: bandpass filter 1Hz-45Hz
+% 20160523: bandpass filter set to 1Hz-30Hz
+v_filtered = myFilter(v,[1,30],128);
 
 % truncate data
 vtrim = trimArray(v_filtered,1280);
@@ -23,6 +25,10 @@ vcellfft = cellfun(@(x) fft(x,128), vcell, 'UniformOutput', false);
 snrcell = cellfun(@mysnr,vcellfft,'UniformOutput',false);
 % snrarray = cell2mat(snrcell)';
 snrarray = cell2mat(snrcell);
+
+% ranking only use Fp1 and Fp2 (channel 1,2)
+% slice snrarray to contain only Fp1 and Fp2
+snrarray = snrarray(:,1:2)
 
 % signal-noise ratio ranking is different at each channel
 % we pick the three with most channel in top 3
