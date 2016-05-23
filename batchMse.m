@@ -49,9 +49,9 @@ while (ischar(tline))
     % hard coded size of cell array and column/row number
     current_col = 2;
     
-    for a=1:3
-        for b=1:20
-            for c=1:20
+    for a=1:cells
+        for b=1:channels
+            for c=1:rows
                 results{current_row,current_col} = msedata{a}(c,b);
                 current_col = current_col + 1;
             end
