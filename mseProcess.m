@@ -28,7 +28,7 @@ snrarray = cell2mat(snrcell);
 
 % ranking only use Fp1 and Fp2 (channel 1,2)
 % slice snrarray to contain only Fp1 and Fp2
-snrarray = snrarray(:,1:2)
+snrarray = snrarray(:,1:2);
 
 % signal-noise ratio ranking is different at each channel
 % we pick the three with most channel in top 3
