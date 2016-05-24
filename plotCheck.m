@@ -15,7 +15,7 @@ for i=1:length
 end
 
 subplot(length,1,1);
-title(name);
+title(strcat(name,'_channel_',num2str(channel)));
 
 
 
