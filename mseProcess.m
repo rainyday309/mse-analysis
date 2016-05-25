@@ -3,8 +3,10 @@
 %all outside parameter is set here
 %returns:
 %vcell: cells of truncated signal
+%output: cells of selected signal
+%selected: the array contain number of selected signal
 
-function [vcell,output] = mseProcess(filename)
+function [vcell,output,selected] = mseProcess(filename)
 % read data by filename
 [v,~,~,~] = loaddat(filename,21);
 

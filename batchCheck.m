@@ -23,13 +23,17 @@ while (ischar(tline))
     disp(process);
     
     % read and select epochs
-    [~,data] = mseProcess(tline);
+    % all = all epoches from single file
+    % data = selected epoches
+    [all,data,label] = mseProcess(tline);
     
     % write cell arrays
     name = regexp(tline, 'F[XY]\d{3}','match');
     name = name{1};
     results{current_row,1} = name;
     results{current_row,2} = data;
+    results{current_row,3} = all;
+    results{current_row,4} = label;
     
     tline = fgetl(fid);
     current_row = current_row + 1;

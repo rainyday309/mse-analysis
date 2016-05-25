@@ -37,7 +37,7 @@ while (ischar(tline))
     disp(process);
     
     % read data
-    [~,data] = mseProcess(tline);
+    [~,data,~] = mseProcess(tline);
     
     % calculate mse, return 3x1 cell array of mse arrays
     msedata = cellfun(@mseCalc, data, 'UniformOutput',false);
