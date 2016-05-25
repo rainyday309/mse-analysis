@@ -6,7 +6,7 @@ function plotChannels(input)
 
 figure();
 for i=1:20
-    subplot(i,1,20);
+    subplot(20,1,i);
     plot(input(:,i));
 end
 
