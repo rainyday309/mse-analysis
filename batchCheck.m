@@ -25,7 +25,7 @@ while (ischar(tline))
     % read and select epochs
     % all = all epoches from single file
     % data = selected epoches
-    [all,data,label] = mseProcess(tline);
+    [all,data,label,snrarray] = mseProcess(tline);
     
     % write cell arrays
     name = regexp(tline, 'F[XY]\d{3}','match');
@@ -34,6 +34,7 @@ while (ischar(tline))
     results{current_row,2} = data;
     results{current_row,3} = all;
     results{current_row,4} = label;
+    results{current_row,5} = snrarray;
     
     tline = fgetl(fid);
     current_row = current_row + 1;

@@ -4,7 +4,7 @@
 % 2nd column contain an cell array 1x3
 % each cell array contain an array 1280x20
 
-function plotCheck(name, data, channel)
+function plotSave(name, data, channel)
 [length,~] = size(data);
 
 

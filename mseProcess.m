@@ -6,7 +6,7 @@
 %output: cells of selected signal
 %selected: the array contain number of selected signal
 
-function [vcell,output,selected] = mseProcess(filename)
+function [vcell,output,selected,snrarray] = mseProcess(filename)
 % read data by filename
 [v,~,~,~] = loaddat(filename,21);
 
