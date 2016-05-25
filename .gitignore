@@ -1,4 +1,5 @@
 .DS_Store
 *.DAT
+*.mat
 octave-workspace
 recheck_plots/*.*
