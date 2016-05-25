@@ -47,3 +47,7 @@ average and se of avg-post-mse-n
 compare treatment group mse change with paired t-test
 compare control with treatment pre-mse
 compare control with treatment post-mse
+
+### memo  
+get result list for handpicking:
+results = batchCheck('filelist_fix.txt');
