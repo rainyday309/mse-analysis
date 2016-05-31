@@ -13,6 +13,7 @@ figure();
 for i=1:length
     subplot(length,1,i);
     plot(input{i}(:,channel));
+    ylim([-50 50]);
 end
 
 

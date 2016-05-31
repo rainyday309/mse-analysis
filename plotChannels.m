@@ -8,6 +8,7 @@ figure();
 for i=1:20
     subplot(20,1,i);
     plot(input(:,i));
+    ylim([-50 50]);
 end
 
 end
