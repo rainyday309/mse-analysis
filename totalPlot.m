@@ -4,7 +4,7 @@
 function totalPlot(results)
 for j=1:232
     for k=1:20
-        plotCheck(results{j,:},k)
+        plotSave(results{j,1},results{j,2},k);
     end
 end
 end
