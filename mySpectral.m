@@ -44,8 +44,8 @@ for(i=1:3)
     beta_abs = sum(spectra(beta(1):beta(2),:));
 
     
-    subplot(1,3,i);
-    plot(f,log2(spectra));
+    %subplot(1,3,i);
+    %plot(f,log2(spectra));
     
     delta_rel = delta_abs./total;
     theta_rel = theta_abs./total;
