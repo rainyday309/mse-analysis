@@ -17,7 +17,7 @@ for i=1:9
     %each tag
     for j=1:19
         %each channel
-        title = strcat(tags{i},'_',channels{j});
+        title = strcat(channels{j},'_',tags{i});
         output{1,current_col} = title;
         current_col = current_col + 1;
     end
