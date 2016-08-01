@@ -13,6 +13,8 @@ function output = snrRanking(input)
 inputSorted = sort(input,'descend');
 mask = input >= repmat(inputSorted(3,:),[rows,1]);
 
+% consider using geometric mean in the next version
+
 ranking = sum(mask,2);
 
 rankingSorted = sort(ranking,'descend');
