@@ -1,0 +1,3 @@
+Method for spectral analysis (draft)
+
+The data is processed with MATLAB(v2015b) signal processing toolbox. n artifact-free n-second epoches in each subject were selected to calculate absolute EEG power. The following standard band frequencies were studied: delta (0.5– 3.5 Hz), theta (4–7.5 Hz), alpha (8–13 Hz), beta (13–30 Hz), and gamma (30–40 Hz). For statistical analyses, the relative band power at each band was calculated as power in each frequency divided by total power across all frequency band.

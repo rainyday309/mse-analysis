@@ -1,0 +1,24 @@
+Information required for analysis of EEG
+
+must-have information:
+1. sampling rate
+2. hardware filter setting (filter type, filtered range)
+3. software filter setting (filter type, filtered range)
+4. unit of voltage measurement (mostly microvolt)
+5. electrode position
+6. position of ground electrode
+7. resistance at each electrode
+8. amplifier setting 
+9. arrays of voltage measurement at each electrode
+
+* it would be easier if the exported EEG measurement is a plain text file with the above information provided. Otherwise, specification of binary data format or loading program
+is needed for analysis in MATLAB or other tools.
+
+I personally use MATLAB for analysis, and some open source loaders are provided by the community (http://pub.ist.ac.at/~schloegl/matlab/eeg/).If the data provided already have open source loaders, we can directly use these built programs to load binary data.
+
+* I found specification of data provided by Garmin manufactured equipments. It would be a lot easier if the engineers export the data for us, or at least provide type of record.
+
+http://www.garmin.com/support/pdf/iop_spec.pdf
+
+
+WCYang 20160831
