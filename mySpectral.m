@@ -86,13 +86,13 @@ result{1,6} = 'delta_rel';
 result{2,6} = delta_rel_sum./3;
 
 result{1,7} = 'theta_abs';
-result{2,7} = theta_abs_sum./3;
+result{2,7} = theta_rel_sum./3;
 
 result{1,8} = 'alpha_abs';
-result{2,8} = alpha_abs_sum./3;
+result{2,8} = alpha_rel_sum./3;
 
 result{1,9} = 'beta_abs';
-result{2,9} = beta_abs_sum./3;
+result{2,9} = beta_rel_sum./3;
 
 
 
